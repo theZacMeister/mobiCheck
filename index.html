@@ -10,24 +10,34 @@
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <script src="javascripts/mobile.js"></script>
+    <script>
+      function onLoadBody() {
+        var amI;
+        if (onMobile() == true) {
+          amI = "are";
+        } else {
+          amI = "are not";
+        }
+        
+        document.getElementById("p1").innerHTML = "You " + amI + "  on a mobile device";
+      }
+    </script>
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body onLoad="onLoadBody();">
     <div class="wrapper">
       <header>
         <h1>Mobicheck</h1>
         <p>Check on mobile with two lines!</p>
-        <p class="view"><a href="https://github.com/theZacMeister/mobiCheck">View the Project on GitHub <small>theZacMeister/mobiCheck</small></a></p>
-        <ul>
-          <li><a href="https://github.com/theZacMeister/mobiCheck/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/theZacMeister/mobiCheck/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/theZacMeister/mobiCheck">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
       <section>
-        <p>You are on a Mobile Device</p>
+        <div>
+          <p id="p1">You are on a Mobile Device</p>
+        </div>
       </section>
     </div>
     <footer>
